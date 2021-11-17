@@ -2,14 +2,14 @@ import { Component } from "react";
 import icon from '../images/cart-icon.png'
 import CItem from "./C-Item";
 
-export default class Groceries extends Component{
+export default class Cart extends Component{
 constructor(props){
     super(props)
-    this.state = {groceries: this.props.groceries}
+    this.state = {cart: this.props.cart}
 }
 processList = () => {
     try {
-        const sorted = this.state.groceries.sort()
+        const sorted = this.state.cart.sort()
         const res = []
         let counter = 1
         for (let i = 0; i < sorted.length; i++) {
@@ -25,9 +25,9 @@ processList = () => {
         return []
     }
 }
-// this.setState()
+// this.setState(this.state.cart, (prevState) => {console.log(this.srate.cart);})
 render(){
-    const listItems = this.processList().map((item, counter, index) => <CItem key={index} item={item} counter={counter}/>)
+    const listItems = this.processList().map(({item, counter}, index) => <CItem key={index} item={item} counter={counter}/>)
     return(
         <div className = {'cart'}>
             <h4><img src={icon} alt=''/>Cart</h4>

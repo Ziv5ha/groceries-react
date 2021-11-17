@@ -8,7 +8,7 @@ constructor(props){
     this.state = {groceries: this.props.groceries}
 }
 render(){
-    const listItems = this.state.groceries.map((item, index) => <GItem key={index} item={item} />)
+    const listItems = this.state.groceries.map((item, index) => <GItem key={index} item={item} onClick={this.props.onClickFunc} />)
     return(
         <div className = {'groceries'}>
             <h4><img src={icon} alt=''/>Groceries</h4>

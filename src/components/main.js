@@ -7,15 +7,17 @@ const groceriesData = ['Strawberry', 'Blueberry', 'Orange', 'Banana', 'Apple', '
 export default class Main extends Component{
 constructor(props){
     super(props)
-    this.state = {}
+    this.state = {cart: []}
+}
+addToCart = ({target}) => {
+    this.setState((prevState)=>prevState.cart.push(target.textContent))
+
 }
 render(){
     return(
         <main>
-            <Groceries groceries = {groceriesData}/>
-            <Cart />
-            {/* {Groceries} */}
-            {/* {Cart} */}
+            <Groceries groceries = {groceriesData} onClickFunc ={this.addToCart}/>
+            <Cart cart={this.state.cart}/>
         </main>
     )
 }
