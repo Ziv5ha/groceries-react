@@ -7,7 +7,7 @@ export default class CItem extends Component{
     }
     render(){
     return(
-        <li className = {'c-item'} onClick={this.purchase}>
+        <li className = {'item c-item'} onClick={this.purchase}>
             {this.props.counter}. {this.props.item}
         </li>
     )

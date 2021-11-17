@@ -5,14 +5,14 @@ import CItem from "./C-Item";
 export default class Cart extends Component{
 processList = () => {
     try {
-        const itemArr = this.props.cart
+        const rawArr = this.props.cart
         const uniq = [...new Set(this.props.cart)]
-        const res = uniq.map(uniqItem => {
+        const res = uniq.map(item => {
             let counter = 0
-            itemArr.forEach(rawItem => {
-                if (uniqItem === rawItem) counter++
+            rawArr.forEach(rawItem => {
+                if (item === rawItem) counter++
             })
-            return {item: uniqItem, counter}
+            return {item, counter}
         })
         return res
     } catch (error) {
@@ -22,7 +22,7 @@ processList = () => {
 render(){
     const listItems = this.processList().map(({item, counter}, index) => <CItem key={index} item={item} counter={counter}/>)
     return(
-        <div className = {'cart'}>
+        <div className = {'list'}>
             <h4><img src={icon} alt=''/>Cart</h4>
             <ul>
                 {listItems}

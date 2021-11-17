@@ -19,7 +19,7 @@ clearCart = () => {
 }
 render(){
     return(
-        <main>
+        <main className={'main'}>
             <Groceries groceries = {groceriesData} onClickFunc ={this.addToCart}/>
             <img className={'trash'} src={trash} alt='' onClick={this.clearCart}/>
             <Cart cart={this.state.cart}/>

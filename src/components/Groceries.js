@@ -10,7 +10,7 @@ constructor(props){
 render(){
     const listItems = this.state.groceries.map((item, index) => <GItem key={index} item={item} onClick={this.props.onClickFunc} />)
     return(
-        <div className = {'groceries'}>
+        <div className = {'list'}>
             <h4><img src={icon} alt=''/>Groceries</h4>
             <ul>
                 {listItems}
