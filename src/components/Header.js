@@ -2,14 +2,11 @@ import { Component } from "react";
 import img from '../images/basket.png'
 
 export default class App extends Component{
-//   constructor(props){
-//     super(props)
-//   }
   render(){
     return(
-        <header>
+        <header className={'head'}>
             <img src={img} alt=''/>
-            <h2 className={'header'}>Hello, Basket</h2>
+            <h2>Hello, Basket</h2>
         </header>
     )
   }

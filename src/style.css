@@ -1,0 +1,23 @@
+.head{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    width: 100vw;
+    height: 240px;
+    background-color: #222222;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head img{
+    width: 160px;
+    margin: 20px auto 0 auto;
+}
+
+
+
+.purchased{
+    text-decoration: line-through;
+}

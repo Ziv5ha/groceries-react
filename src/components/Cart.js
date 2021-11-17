@@ -3,29 +3,22 @@ import icon from '../images/cart-icon.png'
 import CItem from "./C-Item";
 
 export default class Cart extends Component{
-constructor(props){
-    super(props)
-    this.state = {cart: this.props.cart}
-}
 processList = () => {
     try {
-        const sorted = this.state.cart.sort()
-        const res = []
-        let counter = 1
-        for (let i = 0; i < sorted.length; i++) {
-            if (sorted[i] === sorted[i+1]){
-                counter++
-            } else {
-                res.push({item: sorted[i], counter})
-                counter = 1
-            }
-        }
+        const itemArr = this.props.cart
+        const uniq = [...new Set(this.props.cart)]
+        const res = uniq.map(uniqItem => {
+            let counter = 0
+            itemArr.forEach(rawItem => {
+                if (uniqItem === rawItem) counter++
+            })
+            return {item: uniqItem, counter}
+        })
         return res
     } catch (error) {
         return []
     }
 }
-// this.setState(this.state.cart, (prevState) => {console.log(this.srate.cart);})
 render(){
     const listItems = this.processList().map(({item, counter}, index) => <CItem key={index} item={item} counter={counter}/>)
     return(
