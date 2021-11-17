@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    width: 100vw;
+    height: 226px;
+    background-color: #222222;
+    color: white;
+}
+.head img{
+    width: 147px;
+    margin: 20px auto 0 auto;
+}
+.head h1{
+    font-size: 24px;
+    margin: 16px 0 0 0;
+}
+
+.main{
+    margin: 125px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+.trash{
+    position: absolute;
+    top: 380px;
+    right: 13%;
+    opacity: 30%;
+}
+.trash:hover{
+    opacity: 100%;
+}
+.list{
+    width: 30%;
+    font-size: 19px;
+}
+.list ul{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.item:nth-child(odd){
+    margin: 7px 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    list-style:none;
+}
+.item:nth-child(even){
+    margin: 7px 0;
+    background-color: #efefef;
+    padding: 10px;
+    list-style:none;
+}
+.g-item:before {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.g-item:nth-child(odd):before {
+    background-image: url(./images/g-list-inactive.png);
+}
+.g-item:nth-child(even):before {
+    background-image: url(./images/g-list-inactive-odd.png);
+}
+.g-item:hover:before {
+    background-image: url(./images/g-list-active.png);
+    margin-right: 13px;
+}
+
+.c-item:before {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    background-image: url(./images/c-list-inactive.png);
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.c-item:nth-child(odd):before {
+    background-image: url(./images/c-list-inactive.png);
+}
+.c-item:nth-child(even):before {
+    background-image: url(./images/c-list-inactive-odd.png);
+}
+.c-item:hover:before {
+    background-image: url(./images/c-list-active.png);
+    margin-right: 13px;
+}
+.purchased{
+    text-decoration: line-through;
+}
+.footer{
+    display: flex;
+    width: 100vw;
+    height: 140px;
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
